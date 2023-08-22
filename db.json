@@ -1,0 +1,46 @@
+{
+  "customers": [
+    {
+      "name": "Tommy Smith",
+      "email": "tommy@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Sara Jones ",
+      "email": "sara@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Dave Smith",
+      "email": "dave@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Peter Parker",
+      "email": "spiderman@marvel.com",
+      "id": 4
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "custId": 1,
+      "text": "this is my first note"
+    },
+    {
+      "id": 2,
+      "custId": 1,
+      "text": "this is a test note"
+    },
+    {
+      "id": 3,
+      "custId": 2,
+      "text": "another note goes here"
+    },
+    {
+      "text": "This is Peters first note.",
+      "custId": "4",
+      "id": 5
+    }
+  ]
+}
