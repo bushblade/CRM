@@ -11,14 +11,17 @@ function CustomerPage() {
     fetchSingleCustomer(id).then(setCustomer)
   }, [id, setCustomer])
 
-  if (!customer) {
-    return <h1>Loading Customer...</h1>
-  }
-
   return (
     <>
-      <h1>{customer.name}</h1>
-      email: <a href={`mailto:${customer.email}`}>{customer.email}</a>
+      <div style={{ minHeight: '6rem' }}>
+        <h1>{customer ? customer.name : 'Loading Customer...'}</h1>
+        <strong>email:</strong>{' '}
+        {customer ? (
+          <a href={`mailto:${customer.email}`}>{customer.email}</a>
+        ) : (
+          <span>Loading Customer...</span>
+        )}
+      </div>
       <hr />
       <nav>
         <Link to=''>Notes</Link> | <Link to='edit'>Edit</Link>

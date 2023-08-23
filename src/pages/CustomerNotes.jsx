@@ -21,30 +21,30 @@ function CustomerNotes() {
     }
   }
 
-  if (!customerNotes) {
-    return <h2>Loading the notes...</h2>
-  }
-
   return (
     <>
       <h2>Notes</h2>
       <ul style={{ minHeight: '7rem' }}>
-        {customerNotes.map((note) => (
-          <li
-            key={note.id}
-            style={{
-              display: 'flex',
-            }}
-          >
-            <button
-              onClick={handleDeleteNote(note.id)}
-              style={{ padding: '4px' }}
+        {customerNotes ? (
+          customerNotes.map((note) => (
+            <li
+              key={note.id}
+              style={{
+                display: 'flex',
+              }}
             >
-              🗑️
-            </button>
-            <span>{note.text}</span>
-          </li>
-        ))}
+              <button
+                onClick={handleDeleteNote(note.id)}
+                style={{ padding: '4px' }}
+              >
+                🗑️
+              </button>
+              <span>{note.text}</span>
+            </li>
+          ))
+        ) : (
+          <h2>Loading the notes...</h2>
+        )}
       </ul>
       <AddNoteForm
         custId={id}
