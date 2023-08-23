@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import AddCustomerForm from '../components/AddCustomerForm.jsx'
-
-async function fetchAllCustomers() {
-  const res = await fetch('/api/customers')
-  const customers = await res.json()
-  return customers
-}
+import { fetchAllCustomers } from '../api/fetchFunctions.js'
 
 function Home() {
   const [customers, setCustomers] = useState([])

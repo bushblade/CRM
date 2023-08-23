@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { addNote } from '../api/fetchFunctions'
 
 function AddNoteForm({ afterSubmit, custId }) {
   const [text, setText] = useState('')
@@ -6,18 +7,10 @@ function AddNoteForm({ afterSubmit, custId }) {
   function handleSubmit(event) {
     event.preventDefault()
 
-    fetch('/api/notes', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ text, custId: parseInt(custId) }),
+    addNote({ text, custId: parseInt(custId) }).then(() => {
+      afterSubmit()
+      setText('')
     })
-      .then((res) => res.json())
-      .then(() => {
-        afterSubmit()
-        setText('')
-      })
   }
 
   return (

@@ -1,23 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import AddNoteForm from '../components/AddNoteForm'
-
-async function fetchCustomersNotes(customerID) {
-  const res = await fetch(`/api/notes?custId=${customerID}`)
-  const notes = await res.json()
-  return notes
-}
-
-async function deleteNote(noteId) {
-  const res = await fetch(`/api/notes/${noteId}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-type': 'application/json',
-    },
-  })
-  const data = await res.json()
-  return data
-}
+import { fetchCustomersNotes, deleteNote } from '../api/fetchFunctions.js'
 
 function CustomerNotes() {
   const { id } = useParams()
