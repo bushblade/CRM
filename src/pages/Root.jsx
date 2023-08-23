@@ -5,7 +5,9 @@ function Root() {
     <>
       <header>
         <nav>
-          <Link to='/'>Home</Link>
+          <Link to='/' style={{ fontSize: '1.5rem' }}>
+            Home
+          </Link>
         </nav>
       </header>
       <Outlet />
