@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { addCustomer } from '../api/fetchFunctions'
 
 function AddCustomerForm({ afterSubmit }) {
   const [name, setName] = useState('')
@@ -6,20 +7,11 @@ function AddCustomerForm({ afterSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault()
-
-    fetch('/api/customers', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email }),
+    addCustomer({ name, email }).then(() => {
+      afterSubmit()
+      setName('')
+      setEmail('')
     })
-      .then((res) => res.json())
-      .then(() => {
-        afterSubmit()
-        setName('')
-        setEmail('')
-      })
   }
 
   return (

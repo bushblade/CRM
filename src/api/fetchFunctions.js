@@ -36,9 +36,7 @@ export async function addNote(note) {
 export async function updateCustomer(customer) {
   const res = await fetch(`/api/customers/${customer.id}`, {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    headers,
     body: JSON.stringify(customer),
   })
   const newCustomer = await res.json()
@@ -49,4 +47,14 @@ export async function fetchSingleCustomer(customerID) {
   const res = await fetch(`/api/customers/${customerID}`)
   const customer = await res.json()
   return customer
+}
+
+export async function addCustomer(customer) {
+  const res = await fetch('/api/customers', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(customer),
+  })
+  const newCustomer = await res.json()
+  return newCustomer
 }
