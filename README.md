@@ -1,8 +1,24 @@
-# React + Vite
+# Simple CRM Demo with json-server
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Get started
 
-Currently, two official plugins are available:
+Clone the repository
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install packages
+
+```bash
+npm i
+```
+
+Run [json-server](https://github.com/typicode/json-server)
+
+```bash
+npm run server
+
+```
+
+Run Vite dev server in separate terminal process
+
+```bash
+npm run dev
+```
