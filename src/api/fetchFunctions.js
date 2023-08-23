@@ -32,3 +32,21 @@ export async function addNote(note) {
   const data = res.json()
   return data
 }
+
+export async function updateCustomer(customer) {
+  const res = await fetch(`/api/customers/${customer.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(customer),
+  })
+  const newCustomer = await res.json()
+  return newCustomer
+}
+
+export async function fetchSingleCustomer(customerID) {
+  const res = await fetch(`/api/customers/${customerID}`)
+  const customer = await res.json()
+  return customer
+}

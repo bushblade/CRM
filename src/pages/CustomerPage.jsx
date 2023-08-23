@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Outlet, Link } from 'react-router-dom'
-
-async function fetchSingleCustomer(customerID) {
-  const res = await fetch(`/api/customers/${customerID}`)
-  const customer = await res.json()
-  return customer
-}
+import { fetchSingleCustomer } from '../api/fetchFunctions.js'
 
 function CustomerPage() {
   const { id } = useParams()

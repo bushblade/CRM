@@ -1,17 +1,6 @@
 import { useState } from 'react'
 import { useOutletContext } from 'react-router-dom'
-
-async function updateCustomer(customer) {
-  const res = await fetch(`/api/customers/${customer.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(customer),
-  })
-  const newCustomer = await res.json()
-  return newCustomer
-}
+import { updateCustomer } from '../api/fetchFunctions.js'
 
 function CustomerEdit() {
   const [customer, setCustomer] = useOutletContext()
