@@ -11,7 +11,7 @@
       "id": 2
     },
     {
-      "name": "Dave Smith",
+      "name": "David Smith",
       "email": "dave@gmail.com",
       "id": 3
     },
@@ -41,6 +41,11 @@
       "text": "This is Peters first note.",
       "custId": "4",
       "id": 5
+    },
+    {
+      "text": "Latest note for Tommy",
+      "custId": "1",
+      "id": 6
     }
   ]
 }

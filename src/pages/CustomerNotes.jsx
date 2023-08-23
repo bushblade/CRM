@@ -30,9 +30,10 @@ function CustomerNotes() {
 
   function handleDeleteNote(noteId) {
     return function () {
-      deleteNote(noteId).then(() => {
-        fetchCustomersNotes(id).then(setCustomerNotes)
-      })
+      if (confirm('Delte note, Are you sure?'))
+        deleteNote(noteId).then(() => {
+          fetchCustomersNotes(id).then(setCustomerNotes)
+        })
     }
   }
 
@@ -45,8 +46,19 @@ function CustomerNotes() {
       <h2>Notes</h2>
       <ul>
         {customerNotes.map((note) => (
-          <li key={note.id}>
-            {note.text} - <button onClick={handleDeleteNote(note.id)}>x</button>
+          <li
+            key={note.id}
+            style={{
+              display: 'flex',
+            }}
+          >
+            <button
+              onClick={handleDeleteNote(note.id)}
+              style={{ padding: '4px' }}
+            >
+              🗑️
+            </button>
+            <span>{note.text}</span>
           </li>
         ))}
       </ul>
