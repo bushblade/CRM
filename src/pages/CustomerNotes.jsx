@@ -44,7 +44,7 @@ function CustomerNotes() {
   return (
     <>
       <h2>Notes</h2>
-      <ul>
+      <ul style={{ minHeight: '7rem' }}>
         {customerNotes.map((note) => (
           <li
             key={note.id}

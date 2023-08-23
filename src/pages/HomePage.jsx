@@ -18,7 +18,7 @@ function Home() {
   return (
     <section>
       <h1>Current Customers</h1>
-      <ul>
+      <ul style={{ minHeight: '7rem' }}>
         {customers.map((customer) => (
           <li key={customer.id}>
             <Link to={`customers/${customer.id}`}>{customer.name}</Link>
