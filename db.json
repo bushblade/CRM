@@ -39,12 +39,12 @@
     },
     {
       "text": "This is Peters first note.",
-      "custId": "4",
+      "custId": 4,
       "id": 5
     },
     {
       "text": "Latest note for Tommy",
-      "custId": "1",
+      "custId": 1,
       "id": 6
     }
   ]

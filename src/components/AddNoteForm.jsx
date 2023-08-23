@@ -11,7 +11,7 @@ function AddNoteForm({ afterSubmit, custId }) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ text, custId }),
+      body: JSON.stringify({ text, custId: parseInt(custId) }),
     })
       .then((res) => res.json())
       .then(() => {
