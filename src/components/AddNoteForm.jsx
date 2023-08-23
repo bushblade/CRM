@@ -26,8 +26,6 @@ function AddNoteForm({ afterSubmit, custId }) {
       <form onSubmit={handleSubmit}>
         <div>
           <textarea
-            cols='60'
-            rows='6'
             onChange={(e) => setText(e.target.value)}
             value={text}
           ></textarea>
